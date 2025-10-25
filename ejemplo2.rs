@@ -1,28 +1,32 @@
-struct Circle {
-    radius: f64,
-}
+use std::error::Error;
 
-impl Circle {
-    // Constructor-like associated function
-    fn new(radius: f64) -> Circle {
-        Circle { radius }
+fn main() -> Result<(), Box<dyn Error>> {
+    // Replace with your API key from https://openweathermap.org/api
+    let api_key = "llave";
+    let city = "London";
+
+    let url = format!(
+        "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric",
+        city, api_key
+    );
+
+    println!("Fetching weather data from API...\n");
+
+    // Make the HTTP request using blocking reqwest
+    let response = reqwest::blocking::get(&url)?;
+
+    // Check if request was successful
+    if !response.status().is_success() {
+        eprintln!("Error: API returned status {}", response.status());
     }
 
-    // Method to calculate area
-    fn area(&self) -> f64 {
-        std::f64::consts::PI * self.radius * self.radius
-    }
+    // Get the raw text response
+    let body = response.text()?;
 
-    // Method to change the radius
-    fn set_radius(&mut self, new_radius: f64) {
-        self.radius = new_radius;
-    }
-}
+    // Print the raw JSON result
+    println!("Raw API Response:");
+    println!("==============================");
+    println!("{}", body);
 
-fn main() {
-    let mut my_circle = Circle::new(5.0);
-    println!("Initial area: {}", my_circle.area());
-
-    my_circle.set_radius(7.0);
-    println!("New area: {}", my_circle.area());
+    Ok(())
 }

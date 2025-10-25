@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  rust-app:
+    image: rust:latest
+    container_name: rust-dev
+    working_dir: /app
+    volumes:
+      - ./:/app
+      # # Mount local source code to /app in container
+      # - ./src:/app/src
+      # - ./Cargo.toml:/app/Cargo.toml
+      # - ./Cargo.lock:/app/Cargo.lock
+      # # Mount target directory for compiled binaries
+      # - ./target:/app/target
+      # Optional: Cache cargo registry to speed up builds
+      - cargo-cache:/usr/local/cargo/registry
+      - cargo-git:/usr/local/cargo/git
+    #command: cargo build --release
+    # Alternatively, keep container running for interactive development:
+    command: tail -f /dev/null
+    stdin_open: true
+    tty: true
+
+volumes:
+  cargo-cache:
+  cargo-git:

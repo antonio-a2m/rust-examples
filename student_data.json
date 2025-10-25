@@ -1,0 +1,98 @@
+{
+  "student": {
+    "personalInfo": {
+      "studentId": "STU2024001",
+      "firstName": "Emma",
+      "lastName": "Rodriguez",
+      "dateOfBirth": "2006-03-15",
+      "age": 18,
+      "gender": "Female",
+      "email": "emma.rodriguez@school.edu",
+      "phone": "+1-555-0123",
+      "address": {
+        "street": "123 Main Street",
+        "city": "Springfield",
+        "state": "CA",
+        "zipCode": "90210",
+        "country": "USA"
+      }
+    },
+    "academicInfo": {
+      "grade": 12,
+      "class": "12-A",
+      "enrollmentDate": "2020-09-01",
+      "currentGPA": 3.85,
+      "expectedGraduation": "2025-06-15",
+      "major": "Science",
+      "advisor": "Dr. Sarah Mitchell"
+    },
+    "courses": [
+      {
+        "courseId": "MATH401",
+        "courseName": "Calculus II",
+        "teacher": "Mr. John Davis",
+        "credits": 4,
+        "grade": "A",
+        "semester": "Fall 2024"
+      },
+      {
+        "courseId": "PHYS301",
+        "courseName": "Physics III",
+        "teacher": "Dr. Maria Chen",
+        "credits": 4,
+        "grade": "A-",
+        "semester": "Fall 2024"
+      },
+      {
+        "courseId": "ENG402",
+        "courseName": "English Literature",
+        "teacher": "Ms. Jennifer Brown",
+        "credits": 3,
+        "grade": "B+",
+        "semester": "Fall 2024"
+      },
+      {
+        "courseId": "CHEM301",
+        "courseName": "Organic Chemistry",
+        "teacher": "Dr. Robert Lee",
+        "credits": 4,
+        "grade": "A",
+        "semester": "Fall 2024"
+      }
+    ],
+    "extracurricular": [
+      {
+        "activity": "Debate Team",
+        "role": "Captain",
+        "yearsActive": 3
+      },
+      {
+        "activity": "Science Club",
+        "role": "Member",
+        "yearsActive": 2
+      },
+      {
+        "activity": "Volunteer Tutoring",
+        "role": "Math Tutor",
+        "yearsActive": 2
+      }
+    ],
+    "emergencyContact": {
+      "name": "Maria Rodriguez",
+      "relationship": "Mother",
+      "phone": "+1-555-0124",
+      "email": "maria.rodriguez@email.com"
+    },
+    "attendance": {
+      "totalDays": 160,
+      "daysPresent": 155,
+      "daysAbsent": 5,
+      "attendanceRate": 96.88
+    },
+    "achievements": [
+      "Honor Roll - Fall 2024",
+      "Regional Science Fair - 2nd Place",
+      "Math Competition Finalist"
+    ]
+  }
+}
